@@ -1,16 +1,25 @@
 import React from "react";
 import { Product } from "../../utils/product";
+import { useWishlist } from "../../../context/WishlistContext";
 
 export interface ProductProps {
 	product: Product;
 }
 
 const ProductComponent: React.FC<ProductProps> = ({ product }) => {
-	const { imageUrl, name, description, price, category, id } = product;
+	const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
+
+	const isProductInWishlist = wishlist.some(item => item.id === product.id);
 
 	const handleAddToWishlist = () => {
-		// Add logic to add the product to the wishlist
+		addToWishlist(product);
 	};
+
+	const handleRemoveFromWishlist = () => {
+		removeFromWishlist(product.id);
+	};
+
+	const { imageUrl, name, description, price, category, id } = product;
 
 	return (
 		<div className="bg-white rounded-lg shadow-lg p-4">
@@ -23,12 +32,21 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
 			<p className="text-gray-500">{category}</p>
 			<p className="text-gray-700">Price: {price}</p>
 			<p className="text-gray-700">ID: {id}</p>
-			<button
-				className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
-				onClick={handleAddToWishlist}
-			>
-				Add to Wishlist
-			</button>
+			{isProductInWishlist ? (
+				<button
+					className="text-sm bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
+					onClick={handleRemoveFromWishlist}
+				>
+					Remove from list
+				</button>
+			) : (
+				<button
+					className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+					onClick={handleAddToWishlist}
+				>
+					Add to list
+				</button>
+			)}
 		</div>
 	);
 };

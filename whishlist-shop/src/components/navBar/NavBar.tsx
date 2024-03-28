@@ -8,7 +8,7 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ title }) => {
 	return (
-		<header className="flex justify-between bg-gray-800 p-4 ">
+		<header className="flex justify-between bg-gray-800 p-4">
 			<Image
 				width={100}
 				height={50}
