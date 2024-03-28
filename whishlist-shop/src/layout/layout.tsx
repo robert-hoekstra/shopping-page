@@ -12,7 +12,7 @@ export default function Layout({ children, ...props }: LayoutProps) {
 		<>
 			<NavBar title="The Wishlist Shop" />
 			<SidePanel />
-			<main className="p-6 mx-auto">{children}</main>
+			<main className="p-6 mx-auto bg-slate-700">{children}</main>
 			<Footer />
 		</>
 	);

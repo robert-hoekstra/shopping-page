@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import WishList from "../wishlist/WishList";
+import { useWishlist } from "../../../context/WishlistContext";
 
 type NavBarProps = {
 	title: string;
 };
 
 const NavBar: React.FC<NavBarProps> = ({ title }) => {
+	const { wishlist, toggleSidePanel } = useWishlist();
 	return (
 		<header className="flex justify-between bg-gray-800 p-4">
 			<Image
@@ -16,8 +18,8 @@ const NavBar: React.FC<NavBarProps> = ({ title }) => {
 				alt={title}
 			/>
 			<WishList
-				itemCount={0}
-				onClick={() => {}}
+				itemCount={wishlist.length}
+				onClick={toggleSidePanel}
 			/>
 		</header>
 	);

@@ -1,23 +1,29 @@
 import React, { useState } from "react";
+import { useWishlist } from "../../../context/WishlistContext";
+import ProductList from "../productList/ProductList";
 
 const SidePanel: React.FC = () => {
-	const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
-
-	const togglePanel = () => {
-		setIsSidePanelOpen(!isSidePanelOpen);
-	};
+	const { isSidePanelOpen, toggleSidePanel, wishlist } = useWishlist();
 
 	return (
 		<div
-			className={`side-panel fixed top-0 right-0 h-screen w-64 bg-white transition-transform duration-300 transform ${
+			className={`side-panel shadow-md p-4 fixed top-0 right-0 h-screen w-128 bg-slate-900 transition-transform duration-300 transform ${
 				isSidePanelOpen ? "translate-x-0" : "translate-x-full"
-			}`}
+			} shadow-sm`}
 		>
-			<button onClick={togglePanel}>
-				{isSidePanelOpen ? "Close" : "Open"}
-			</button>
+			<div className="flex justify-between">
+				<h2 className="font-bold">My wishlist</h2>
+				<button
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+					onClick={toggleSidePanel}
+				>
+					{isSidePanelOpen ? "Close" : "Open"}
+				</button>
+			</div>
 			{isSidePanelOpen && (
-				<div className="panel-content">{/* Add your panel content here */}</div>
+				<div className="panel-content">
+					<ProductList items={wishlist} />
+				</div>
 			)}
 		</div>
 	);

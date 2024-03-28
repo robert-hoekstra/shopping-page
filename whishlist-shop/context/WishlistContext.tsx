@@ -9,12 +9,15 @@ import React, {
 interface Product {
 	id: number;
 	name: string;
+	quantity: number;
 }
 
 interface WishlistContextType {
 	wishlist: Product[];
-	addToWishlist: (product: Product) => void;
-	removeFromWishlist: (productId: number) => void;
+	addToWishlist: (product: Product, quantity?: number) => void;
+	removeFromWishlist: (product: Product, quantity?: number) => void;
+	isSidePanelOpen: boolean;
+	toggleSidePanel: () => void;
 }
 
 interface WishlistProviderProps {
@@ -36,6 +39,7 @@ export const useWishlist = () => {
 export const WishlistProvider: FC<WishlistProviderProps> = ({ children }) => {
 	const [wishlist, setWishlist] = useState<Product[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [isSidePanelOpen, setIsSidePanelOpen] = useState(false);
 
 	// Load wishlist from localStorage on component mount
 	useEffect(() => {
@@ -52,19 +56,39 @@ export const WishlistProvider: FC<WishlistProviderProps> = ({ children }) => {
 		console.log(wishlist); // Log the updated wishlist
 	}, [wishlist]);
 
-	const addToWishlist = (product: Product) => {
-		setWishlist([...wishlist, product]);
+	const addToWishlist = (product: Product, quantity: number = 1) => {
+		const existingProductIndex = wishlist.findIndex(p => p.id === product.id);
+		if (existingProductIndex !== -1) {
+			// If the product already exists in the wishlist, update its quantity
+			const updatedWishlist = [...wishlist];
+			updatedWishlist[existingProductIndex].quantity += quantity;
+			setWishlist(updatedWishlist);
+		} else {
+			// If the product is not in the wishlist, add it with the specified quantity
+			setWishlist([...wishlist, { ...product, quantity }]);
+		}
 	};
 
-	const removeFromWishlist = (productId: number) => {
-		setWishlist(wishlist.filter(product => product.id !== productId));
+	const removeFromWishlist = (product: Product, quantity: number = 1) => {
+		const existingProductIndex = wishlist.findIndex(p => p.id === product.id);
+		if (existingProductIndex !== -1) {
+			const updatedWishlist = [...wishlist];
+			updatedWishlist[existingProductIndex].quantity -= quantity;
+			if (updatedWishlist[existingProductIndex].quantity <= 0) {
+				// If the quantity becomes zero or negative, remove the product from the wishlist
+				updatedWishlist.splice(existingProductIndex, 1);
+			}
+			setWishlist(updatedWishlist);
+		}
+	};
+
+	const toggleSidePanel = () => {
+		setIsSidePanelOpen(!isSidePanelOpen);
 	};
 
 	if (isLoading) {
 		return <div>Loading...</div>;
 	}
-
-	console.log(wishlist); // Log the wishlist when rendering
 
 	return (
 		<WishlistContext.Provider
@@ -72,6 +96,8 @@ export const WishlistProvider: FC<WishlistProviderProps> = ({ children }) => {
 				wishlist,
 				addToWishlist,
 				removeFromWishlist,
+				isSidePanelOpen,
+				toggleSidePanel,
 			}}
 		>
 			{children}
