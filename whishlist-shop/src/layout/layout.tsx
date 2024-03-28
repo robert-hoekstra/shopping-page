@@ -10,7 +10,7 @@ export default function Layout({ children, ...props }: LayoutProps) {
 	return (
 		<>
 			<NavBar title="The Wishlist Shop" />
-			<main className="p-4 mx-auto">{children}</main>
+			<main className="p-6 mx-auto">{children}</main>
 			<Footer />
 		</>
 	);

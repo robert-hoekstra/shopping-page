@@ -19,7 +19,7 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
 				src={imageUrl}
 				alt={description}
 			/>
-			<h2 className="text-xl font-bold">{name}</h2>
+			<h2 className="font-bold text-blue-900">{name}</h2>
 			<p className="text-gray-500">{category}</p>
 			<p className="text-gray-700">Price: {price}</p>
 			<p className="text-gray-700">ID: {id}</p>

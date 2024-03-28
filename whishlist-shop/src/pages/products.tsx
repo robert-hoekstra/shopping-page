@@ -13,11 +13,13 @@ export default function ProductsPage() {
 	}, []);
 
 	return (
-		<div className="">
-			<h1>Bekijk ons assortiment</h1>
+		<div className="grid gap-6">
+			<h1 className="text-2xl font-bold">
+				Wat voeg jij tot aan jouw wishlist?
+			</h1>
 			<Grid
-				columns={4}
 				gap={4}
+				columnWidth={200}
 			>
 				{products.map(product => (
 					<Product
