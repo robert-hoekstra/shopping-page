@@ -1,0 +1,98 @@
+[
+	{
+		"id": 1,
+		"name": "Hammer",
+		"price": 15.99,
+		"description": "A versatile tool for driving nails and breaking objects.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/hammer.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Screwdriver Set",
+		"price": 24.99,
+		"description": "A set of screwdrivers with various tips for different screws.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/screwdriver_set.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Power Drill",
+		"price": 59.99,
+		"description": "A versatile tool for drilling holes and driving screws.",
+		"category": "Power Tools",
+		"imageUrl": "http://example.com/power_drill.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Circular Saw",
+		"price": 129.99,
+		"description": "A powerful saw for cutting through wood and other materials.",
+		"category": "Power Tools",
+		"imageUrl": "http://example.com/circular_saw.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Adjustable Wrench",
+		"price": 12.99,
+		"description": "A wrench with adjustable jaws for gripping various sizes of nuts and bolts.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/adjustable_wrench.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Pliers Set",
+		"price": 19.99,
+		"description": "A set of pliers for gripping, bending, and cutting wires and other materials.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/pliers_set.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Miter Saw",
+		"price": 179.99,
+		"description": "A specialized saw for making precise angled cuts, often used in woodworking.",
+		"category": "Power Tools",
+		"imageUrl": "http://example.com/miter_saw.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Level",
+		"price": 9.99,
+		"description": "A tool for determining if a surface is horizontal or vertical.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/level.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Tape Measure",
+		"price": 7.99,
+		"description": "A flexible ruler used to measure distance or length.",
+		"category": "Hand Tools",
+		"imageUrl": "http://example.com/tape_measure.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Angle Grinder",
+		"price": 49.99,
+		"description": "A powerful tool for cutting, grinding, and polishing metal and other materials.",
+		"category": "Power Tools",
+		"imageUrl": "http://example.com/angle_grinder.jpg"
+	},
+	{
+		"id": 11,
+		"name": "Chainsaw",
+		"price": 199.99,
+		"description": "A motorized saw with a rotating chain for cutting through wood and other materials.",
+		"category": "Power Tools",
+		"imageUrl": "http://example.com/chainsaw.jpg"
+	},
+	{
+		"id": 12,
+		"name": "Toolbox Set",
+		"price": 39.99,
+		"description": "A set of durable plastic toolboxes for organizing and storing tools.",
+		"category": "Accessories",
+		"imageUrl": "http://example.com/toolbox_set.jpg"
+	}
+]
