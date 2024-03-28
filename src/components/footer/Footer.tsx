@@ -1,15 +1,9 @@
 import React from "react";
 
-interface FooterProps {
-	// Add any props you need for the footer here
-}
+interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
-	return (
-		<footer className="bg-gray-200 py-4">
-			{/* Add your footer content here */}
-		</footer>
-	);
+	return <footer className="bg-gray-200 py-4"></footer>;
 };
 
 export default Footer;

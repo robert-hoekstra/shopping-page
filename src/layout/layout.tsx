@@ -4,7 +4,6 @@ import SidePanel from "@/components/sidepanel/SidePanel";
 
 interface LayoutProps {
 	children?: React.ReactNode;
-	// any props that come into the component
 }
 
 export default function Layout({ children, ...props }: LayoutProps) {
