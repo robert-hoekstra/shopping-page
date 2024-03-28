@@ -7,7 +7,7 @@ const SidePanel: React.FC = () => {
 
 	return (
 		<div
-			className={`side-panel shadow-md p-4 fixed top-0 right-0 h-screen w-128 bg-slate-900 transition-transform duration-300 transform ${
+			className={`side-panel shadow-md p-4 fixed top-0 right-0 h-screen min-w-80 bg-slate-900 transition-transform duration-300 transform ${
 				isSidePanelOpen ? "translate-x-0" : "translate-x-full"
 			} shadow-sm`}
 		>

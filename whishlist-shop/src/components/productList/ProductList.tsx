@@ -1,11 +1,6 @@
 import React from "react";
 import { useWishlist } from "../../../context/WishlistContext";
-
-interface Product {
-	id: number;
-	name: string;
-	quantity: number;
-}
+import { Product } from "@/utils/product";
 
 interface ProductListProps {
 	items: Product[];
@@ -14,12 +9,12 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({ items }) => {
 	const { addToWishlist, removeFromWishlist } = useWishlist();
 
-	const handleIncrement = (productId: number) => {
-		addToWishlist({ id: productId, name: "", quantity: 1 });
+	const handleIncrement = (product: Product) => {
+		addToWishlist(product);
 	};
 
-	const handleDecrement = (productId: number) => {
-		removeFromWishlist({ id: productId, name: "", quantity: 1 });
+	const handleDecrement = (product: Product) => {
+		removeFromWishlist(product);
 	};
 
 	return (
@@ -37,13 +32,13 @@ const ProductList: React.FC<ProductListProps> = ({ items }) => {
 						<div className="ml-2">
 							<button
 								className="bg-gray-500 text-white rounded-md px-2 py-1 mr-2"
-								onClick={() => handleIncrement(item.id)}
+								onClick={() => handleIncrement(item)}
 							>
 								+
 							</button>
 							<button
 								className="bg-gray-500 text-white rounded-md px-2 py-1"
-								onClick={() => handleDecrement(item.id)}
+								onClick={() => handleDecrement(item)}
 							>
 								-
 							</button>

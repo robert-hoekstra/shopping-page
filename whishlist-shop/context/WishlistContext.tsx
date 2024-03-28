@@ -1,3 +1,4 @@
+import { Product } from "@/utils/product";
 import React, {
 	createContext,
 	useState,
@@ -5,12 +6,6 @@ import React, {
 	FC,
 	useEffect,
 } from "react";
-
-interface Product {
-	id: number;
-	name: string;
-	quantity: number;
-}
 
 interface WishlistContextType {
 	wishlist: Product[];
@@ -53,18 +48,15 @@ export const WishlistProvider: FC<WishlistProviderProps> = ({ children }) => {
 	// Save wishlist to localStorage whenever it changes
 	useEffect(() => {
 		localStorage.setItem("wishlist", JSON.stringify(wishlist));
-		console.log(wishlist); // Log the updated wishlist
 	}, [wishlist]);
 
 	const addToWishlist = (product: Product, quantity: number = 1) => {
 		const existingProductIndex = wishlist.findIndex(p => p.id === product.id);
 		if (existingProductIndex !== -1) {
-			// If the product already exists in the wishlist, update its quantity
 			const updatedWishlist = [...wishlist];
 			updatedWishlist[existingProductIndex].quantity += quantity;
 			setWishlist(updatedWishlist);
 		} else {
-			// If the product is not in the wishlist, add it with the specified quantity
 			setWishlist([...wishlist, { ...product, quantity }]);
 		}
 	};
@@ -73,9 +65,8 @@ export const WishlistProvider: FC<WishlistProviderProps> = ({ children }) => {
 		const existingProductIndex = wishlist.findIndex(p => p.id === product.id);
 		if (existingProductIndex !== -1) {
 			const updatedWishlist = [...wishlist];
-			updatedWishlist[existingProductIndex].quantity -= quantity;
+			updatedWishlist[existingProductIndex].quantity -= 1;
 			if (updatedWishlist[existingProductIndex].quantity <= 0) {
-				// If the quantity becomes zero or negative, remove the product from the wishlist
 				updatedWishlist.splice(existingProductIndex, 1);
 			}
 			setWishlist(updatedWishlist);

@@ -16,7 +16,7 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
 	};
 
 	const handleRemoveFromWishlist = () => {
-		removeFromWishlist(product.id);
+		removeFromWishlist(product);
 	};
 
 	const { imageUrl, name, description, price, category, id } = product;
