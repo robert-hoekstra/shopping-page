@@ -5,7 +5,7 @@
 		"price": 15.99,
 		"description": "A versatile tool for driving nails and breaking objects.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/hammer.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 2,
@@ -13,7 +13,7 @@
 		"price": 24.99,
 		"description": "A set of screwdrivers with various tips for different screws.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/screwdriver_set.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 3,
@@ -21,7 +21,7 @@
 		"price": 59.99,
 		"description": "A versatile tool for drilling holes and driving screws.",
 		"category": "Power Tools",
-		"imageUrl": "http://example.com/power_drill.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 4,
@@ -29,7 +29,7 @@
 		"price": 129.99,
 		"description": "A powerful saw for cutting through wood and other materials.",
 		"category": "Power Tools",
-		"imageUrl": "http://example.com/circular_saw.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 5,
@@ -37,7 +37,7 @@
 		"price": 12.99,
 		"description": "A wrench with adjustable jaws for gripping various sizes of nuts and bolts.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/adjustable_wrench.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 6,
@@ -45,7 +45,7 @@
 		"price": 19.99,
 		"description": "A set of pliers for gripping, bending, and cutting wires and other materials.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/pliers_set.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 7,
@@ -53,7 +53,7 @@
 		"price": 179.99,
 		"description": "A specialized saw for making precise angled cuts, often used in woodworking.",
 		"category": "Power Tools",
-		"imageUrl": "http://example.com/miter_saw.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 8,
@@ -61,7 +61,7 @@
 		"price": 9.99,
 		"description": "A tool for determining if a surface is horizontal or vertical.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/level.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 9,
@@ -69,7 +69,7 @@
 		"price": 7.99,
 		"description": "A flexible ruler used to measure distance or length.",
 		"category": "Hand Tools",
-		"imageUrl": "http://example.com/tape_measure.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 10,
@@ -77,7 +77,7 @@
 		"price": 49.99,
 		"description": "A powerful tool for cutting, grinding, and polishing metal and other materials.",
 		"category": "Power Tools",
-		"imageUrl": "http://example.com/angle_grinder.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 11,
@@ -85,7 +85,7 @@
 		"price": 199.99,
 		"description": "A motorized saw with a rotating chain for cutting through wood and other materials.",
 		"category": "Power Tools",
-		"imageUrl": "http://example.com/chainsaw.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	},
 	{
 		"id": 12,
@@ -93,6 +93,6 @@
 		"price": 39.99,
 		"description": "A set of durable plastic toolboxes for organizing and storing tools.",
 		"category": "Accessories",
-		"imageUrl": "http://example.com/toolbox_set.jpg"
+		"imageUrl": "https://via.placeholder.com/150"
 	}
 ]
