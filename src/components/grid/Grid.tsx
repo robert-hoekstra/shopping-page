@@ -28,7 +28,7 @@ const Grid: React.FC<GridProps> = ({ children, gap, columnWidth }) => {
 	}, []);
 
 	return (
-		<div className={`grid grid-cols-${columns} gap-6`}>
+		<div className={`grid grid-cols-3 gap-6`}>
 			{children.map((child, index) => (
 				<div key={index}>{child}</div>
 			))}
